@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reloj Ultimate Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@800&family=Montserrat:wght@900&family=Righteous&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="background-layer" id="bg-layer"></div>
+    <div class="overlay-layer" id="overlay-layer"></div>
+
+    <button id="settings-toggle" class="icon-btn top-right" aria-label="Configuración">⚙️</button>
+    <button id="fullscreen-toggle" class="icon-btn bottom-right" aria-label="Pantalla Completa">⛶</button>
+
+    <main class="clock-container">
+        <div id="clock-wrapper" class="clock-wrapper effect-neon">
+            </div>
+
+        <div id="date-display" class="date-text">Cargando...</div>
+        
+        <div class="pomodoro-section">
+            <div id="pomodoro-display" class="timer-display">25:00</div>
+            <p id="pomodoro-mode" class="mode-text">MODO TRABAJO</p>
+            <div class="timer-controls">
+                <button id="pomodoro-start">INICIAR</button>
+                <button id="pomodoro-reset">REINICIAR</button>
+            </div>
+        </div>
+    </main>
+
+    <aside id="settings-panel" class="hidden">
+        <div class="panel-header">
+            <h3>Estudio de Diseño</h3>
+            <button id="close-settings">×</button>
+        </div>
+        
+        <div class="scrollable-content">
+            <div class="control-group">
+                <label>Tipografía</label>
+                <select id="font-select">
+                    <option value="'JetBrains Mono', monospace">Digital</option>
+                    <option value="'Bebas Neue', sans-serif">Bebas Neue</option>
+                    <option value="'Montserrat', sans-serif">Montserrat</option>
+                    <option value="'Righteous', cursive">Futurista</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label>Estilo Visual</label>
+                <select id="effect-select">
+                    <option value="effect-neon">Neón Cyberpunk</option>
+                    <option value="effect-normal">Normal Flat</option>
+                    <option value="effect-outline">Solo Borde</option>
+                    <option value="effect-boxed">Caja Sólida</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label>Animación</label>
+                <select id="anim-select">
+                    <option value="anim-flip">Flip (Calendario 3D)</option>
+                    <option value="anim-slide">Deslizar Vertical</option>
+                    <option value="anim-zoom">Zoom Beat</option>
+                    <option value="none">Sin Animación</option>
+                </select>
+            </div>
+
+            <div class="control-group half-width">
+                <div>
+                    <label>Color</label>
+                    <input type="color" id="color-picker" value="#ffffff">
+                </div>
+                <div>
+                    <label>Formato</label>
+                    <select id="format-select">
+                        <option value="24">24H</option>
+                        <option value="12">12H</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label>Oscuridad Fondo</label>
+                <input type="range" id="overlay-slider" min="0" max="0.9" step="0.1" value="0.4">
+            </div>
+
+            <div class="gallery-section">
+                <label>Galería de Fondos</label>
+                <div id="bg-gallery" class="gallery-grid">
+                    </div>
+                <label for="bg-file-input" class="custom-file-upload">📂 Subir propia imagen...</label>
+                <input type="file" id="bg-file-input" accept="image/*">
+            </div>
+        </div>
+    </aside>
+
+    <script src="script.js"></script>
+</body>
+</html>
